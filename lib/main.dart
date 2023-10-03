@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
         title: 'Flutter Demo',
-        home: const HomePage());
+        home: HomePage());
   }
 }
 
@@ -47,8 +47,8 @@ class HomePageUI extends State<HomePage> {
     }
 
     AddAllNumber(){
+      sum = FormValue['num1']! + FormValue['num2']! + FormValue['num3']!;
       setState(() {
-        sum = FormValue['num1']! + FormValue['num2']! + FormValue['num3']!;
       });
 
     }
@@ -66,28 +66,28 @@ class HomePageUI extends State<HomePage> {
               sum.toString(),
               style: HeadTextStyle(),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             TextFormField(
               onChanged: (value){
                 MyInputOnChange('num1',value);
               },
               decoration: AppInputStyle('First Number'),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             TextFormField(
               onChanged: (value){
                 MyInputOnChange('num2',value);
               },
               decoration: AppInputStyle('Second Number'),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             TextFormField(
               onChanged: (value){
                 MyInputOnChange('num3',value);
               },
               decoration: AppInputStyle('Third Number'),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
